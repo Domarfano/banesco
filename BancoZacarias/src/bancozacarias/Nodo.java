@@ -3,7 +3,7 @@ package bancozacarias;
 
 /**
  *
- * @author Zacarias
+ * @author Patricia Zacarias
  */
 public class Nodo {
     public cliente inf;
