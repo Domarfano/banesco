@@ -6,7 +6,7 @@ import bancozacarias.Nododoble;
 
 /**
  *
- * @author Zacarias
+ * @author Patricia Zacarias
  */
 public class lista2ble {
     private Nododoble cabeza;

@@ -6,7 +6,7 @@ import bancozacarias.Nodo;
 
 /**
  *
- * @author Zacarias
+ * @author Patricia Zacarias
  */
 public class listOrd {
     private Nodo cabeza;

@@ -5,7 +5,7 @@ import bancozacarias.cliente;
 
 /**
  *
- * @author Zacarias
+ * @author Patricia Zacarias
  */
 public class colas {
     public cliente inf;
