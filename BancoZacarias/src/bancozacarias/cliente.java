@@ -29,7 +29,7 @@ public class cliente{
     public void setFullnombres(String fullnombres) {
         this.fullnombres = fullnombres;
     }
-    public String getFullpellidos() {
+    public String getFullapellidos() {
         return fullapellidos;
     }
     public void setFullapelldidos(String fullapellidos) {
