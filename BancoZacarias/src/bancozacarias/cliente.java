@@ -32,7 +32,7 @@ public class cliente{
     public String getFullapellidos() {
         return fullapellidos;
     }
-    public void setFullapelldidos(String fullapellidos) {
+    public void setFullapellidos(String fullapellidos) {
         this.fullapellidos = fullapellidos;
     }
     public String getCedula() {
