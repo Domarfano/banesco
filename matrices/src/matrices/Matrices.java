@@ -16,10 +16,9 @@ public class Matrices {
 
         while (!salir) {
             System.out.println("1. Operaciones aritmeticas con Matrices");
-            System.out.println("2. Rellenar datos de una Matriz");
-            System.out.println("3. Validar Matriz identidad");
-            System.out.println("4. Determinar Matriz Triangular Inferior");
-            System.out.println("5. Escape");
+            System.out.println("2. Validar Matriz identidad");
+            System.out.println("3. Determinar Matriz Triangular Inferior");
+            System.out.println("4. Escape");
             System.out.println("Usted selecciono:");
             opcion = m.nextInt();
 
@@ -80,9 +79,6 @@ public class Matrices {
                     System.out.println("\n");
                     break;
                 case 2:
-                    System.out.println("RELLENAR UNA MATRIZ");                    
-                    break;
-                case 3:
                     System.out.println("VALIDAR MATRIZ IDENTIDAD 4X4");
                     System.out.println("INGRESE DATOS");
                     
@@ -97,10 +93,10 @@ public class Matrices {
                     System.out.println("VALIDANDO");
                     validar(mt);
                     break;
-                case 4:
+                case 3:
                     System.out.println("IDENTIFICAR MATRIZ");
                     break;
-                case 5:
+                case 4:
                     System.out.println("BYE BYE");
                     salir = true;
                     break;
