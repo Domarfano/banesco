@@ -70,8 +70,14 @@ public class Matrices {
                         for (int j = 0; j < M_1M_2.length; j++) {
                             System.out.print("[" + M_1M_2[i][j] + "]");
                         }
-                        System.out.println("");                          
+                        System.out.println("");
                     }
+                    for (int i = 0; i < 3; i++) {
+                        for (int j = 0; j < 2; j++) {
+                            M_3[i][j] = (int)(Math.random()*6);
+                        }                        
+                    }
+
                     System.out.println("\n");
                     break;
                 case 2:
