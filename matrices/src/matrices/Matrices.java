@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author Zacarias
  */
 public class Matrices {
-    
+    public static Scanner t = new Scanner(System.in);
     public static void main(String[] args) {
         Scanner m = new Scanner(System.in);
         boolean salir = false;
@@ -80,13 +80,25 @@ public class Matrices {
                     System.out.println("\n");
                     break;
                 case 2:
-                    System.out.println("RELLENAR UNA MATRIZ");;
+                    System.out.println("RELLENAR UNA MATRIZ");                    
                     break;
                 case 3:
-                    System.out.println("VALIDAR MATRIZ");;
+                    System.out.println("VALIDAR MATRIZ IDENTIDAD 4X4");
+                    System.out.println("INGRESE DATOS");
+                    
+                    int mt[][] = new int[4][4];
+                    
+                    ingreso(mt);
+                    
+                    System.out.println("LA MATRIZ 4x4 ES:");
+                    
+                    mz(mt);
+                    
+                    System.out.println("VALIDANDO");
+                    validar(mt);
                     break;
                 case 4:
-                    System.out.println("IDENTIFICAR MATRIZ");;
+                    System.out.println("IDENTIFICAR MATRIZ");
                     break;
                 case 5:
                     System.out.println("BYE BYE");
@@ -96,9 +108,52 @@ public class Matrices {
                     System.out.println("");
                     System.out.println("¡¡¡ ERROR !!! ");
                     System.out.println("ELIJA SABIAMENTE ENTRE LAS OPCIONES");
-                    System.out.println("SOLO PUEDE INGRESAR UN NUMEO DEL MENU");
+                    System.out.println("SOLO PUEDE INGRESAR UN NUMERO DEL MENU");
                     System.out.println("\n");
             }
+        }
+    }
+    public static void ingreso(int[][]mt){
+        for (int i = 0; i < mt.length; i++) {
+            for (int j = 0; j < mt.length; j++) {
+                mt[i][j] = t.nextInt();
+            }
+        }
+        System.out.println("");
+    }
+    public static void mz(int[][]mt){
+        for (int i = 0; i < mt.length; i++) {
+            for (int j = 0; j < mt.length; j++) {
+                System.out.print(mt[i][j]+ "  ");
+            }
+            System.out.println();
+        }
+        System.out.println("");
+    }
+    public static void validar(int[][]mt){
+        if(mt[0][0]==1 && mt[1][1]==1 && mt[2][2]==1 && mt[3][3]==1) {
+            if(mt[0][1]==0 && mt[0][2]==0 && mt[0][3]==0) {                
+                if(mt[1][0]==0 && mt[1][2]==0 && mt[1][3]==0){
+                    if(mt[2][0]==0 && mt[2][1]==0 && mt[2][3]==0){
+                        if(mt[3][0]==0 && mt[3][1]==0 && mt[3][2]==0){
+                        }else{
+                            System.out.println("UNO DE LOS DATOS NO ES CERO");
+                        }
+                    }else{
+                        System.out.println("UPS... NO ES IDENTIDAD");
+                    }
+                }else{
+                    System.out.println("QUE TRISTE..");
+                    System.out.println("LA MATRIZ NO TIENE IDENTIDAD...");
+                }
+            }else{
+                System.out.println("LO SIENTO PERO NO ES IDENTIDAD");
+            }
+            System.out.println("¡¡¡ LO LOGRAMOS !!!");
+            System.out.println("ES IDENTIDAD");
+            System.out.println("\n");
+        }else{                
+            System.out.println("NO ES IDENTIDAD");
         }
     }
 }
