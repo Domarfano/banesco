@@ -94,7 +94,8 @@ public class Matrices {
                     validar(mt);
                     break;
                 case 3:
-                    System.out.println("IDENTIFICAR MATRIZ");
+                    System.out.println("IDENTIFICAR MATRIZ TRIANGULAR INFERIOR");
+                    mzTrian();
                     break;
                 case 4:
                     System.out.println("BYE BYE");
@@ -150,6 +151,32 @@ public class Matrices {
             System.out.println("\n");
         }else{                
             System.out.println("NO ES IDENTIDAD");
+        }
+    }
+    public static void mzTrian(){
+        int tm = 0;
+        int sm = 0;
+        
+        System.out.println("INGRESE LAS DIMENSIONES DE LA MATRIZ: ");
+        tm = t.nextInt();
+        int mz[][] = new int[tm][tm];
+       
+        System.out.println("INGRESE LOS DATOS DE LA MATRIZ: ");
+        for (int i = 0; i < tm; i++) {
+            for (int j = 0; j < tm; j++) {
+                System.out.println("columa"+ (i + 1) +"fila"+ (j + 1));
+                mz[i][j] = t.nextInt();
+            }            
+        }
+        for (int j = 1; j < tm; j++) {
+            for (int i = 0; i < tm; i++) {
+                if (i < j) {
+                    sm += mz[i][j];
+                }
+            }
+        }
+        if (sm == 0) {
+            
         }
     }
 }
