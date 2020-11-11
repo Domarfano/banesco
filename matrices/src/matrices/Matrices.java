@@ -28,58 +28,7 @@ public class Matrices {
             switch (opcion) {
                 case 1:
                     System.out.println("OPERACIONES CON MATRICES");
-                    int[][]M_1 = {{8,2},{9,3}};
-                    int[][]M_2 = {{5,3},{6,8}};
-                    int M_suma[][] = new int[2][2];
-                    int[][] M_3 = {{3,2,3},{2,9,1}};                 
-                    int fM_suma = M_suma.length;
-                    int cM_suma = M_suma[0].length;
-                    int fM_3 = M_3.length;
-                    int cM_3 = M_3[0].length;
-                    
-                    for (int i = 0; i < M_1.length; i++) {
-                        for (int j = 0; j < M_2.length; j++) {
-                            M_suma[i][j] = M_1[i][j] + M_2[i][j];
-                        }
-                    }
-                    for(int i = 0; i < M_1.length; i++) {
-                        for (int j = 0; j < M_1.length; j++) {
-                            System.out.print("[" + M_1[i][j] + "]");
-                        }
-                        if (i == 1) {
-                            System.out.print("  +  ");
-                        } else {
-                            System.out.print("     ");
-                        }
-                        for (int j = 0; j < M_2.length; j++) {
-                            System.out.print("[" + M_2[i][j] + "]");
-                        }
-                        if (i == 1) {
-                            System.out.print("  =  ");
-                        } else {
-                            System.out.print("     ");
-                        }
-                        for (int j = 0; j < M_suma.length; j++) {
-                            System.out.print("[" + M_suma[i][j] + "]");
-                        }
-                        System.out.println("\n");
-                    }
-                    int[][] result = new int[fM_suma][cM_3];
-                    for (int i = 0; i < fM_suma; i++) {
-                        for (int j = 0; j < cM_3; j++) {
-                            for (int k = 0; k < cM_suma; k++) {
-                                result[i][j] += M_suma[i][k] * M_3[k][j];
-                            }
-                        }
-                    }
-                    System.out.println("EL RESULTADO DE (M_1 + M_2) * M_3 ES:");
-                    for (int[] fila : result) {
-                        for (int columna : fila) {
-                            System.out.print("[" + columna + " ]");
-                        }
-                        System.out.println("");
-                    }
-                    System.out.println("\n");
+                    operaciones();
                     break;
                 case 2:
                     System.out.println("VALIDAR MATRIZ IDENTIDAD 4X4");
@@ -90,7 +39,6 @@ public class Matrices {
                     ingreso(mt);
                     
                     System.out.println("LA MATRIZ 4x4 ES:");
-                    
                     mz(mt);
                     
                     System.out.println("VALIDANDO");
@@ -112,6 +60,60 @@ public class Matrices {
                     System.out.println("\n");
             }
         }
+    }
+    public static void operaciones(){
+        int[][] M_1 = {{8, 2}, {9, 3}};
+        int[][] M_2 = {{5, 3}, {6, 8}};
+        int M_suma[][] = new int[2][2];
+        int[][] M_3 = {{3, 2, 3}, {2, 9, 1}};
+        int fM_suma = M_suma.length;
+        int cM_suma = M_suma[0].length;
+        int fM_3 = M_3.length;
+        int cM_3 = M_3[0].length;
+
+        for (int i = 0; i < M_1.length; i++) {
+            for (int j = 0; j < M_2.length; j++) {
+                M_suma[i][j] = M_1[i][j] + M_2[i][j];
+            }
+        }
+        for (int i = 0; i < M_1.length; i++) {
+            for (int j = 0; j < M_1.length; j++) {
+                System.out.print("[" + M_1[i][j] + "]");
+            }
+            if (i == 1) {
+                System.out.print("  +  ");
+            } else {
+                System.out.print("     ");
+            }
+            for (int j = 0; j < M_2.length; j++) {
+                System.out.print("[" + M_2[i][j] + "]");
+            }
+            if (i == 1) {
+                System.out.print("  =  ");
+            } else {
+                System.out.print("     ");
+            }
+            for (int j = 0; j < M_suma.length; j++) {
+                System.out.print("[" + M_suma[i][j] + "]");
+            }
+            System.out.println("\n");
+        }
+        int[][] result = new int[fM_suma][cM_3];
+        for (int i = 0; i < fM_suma; i++) {
+            for (int j = 0; j < cM_3; j++) {
+                for (int k = 0; k < cM_suma; k++) {
+                    result[i][j] += M_suma[i][k] * M_3[k][j];
+                }
+            }
+        }
+        System.out.println("EL RESULTADO DE (M_1 + M_2) * M_3 ES:");
+        for (int[] fila : result) {
+            for (int columna : fila) {
+                System.out.print("[" + columna + " ]");
+            }
+            System.out.println("");
+        }
+        System.out.println("\n");
     }
     public static void ingreso(int[][]mt){
         for (int i = 0; i < mt.length; i++) {
