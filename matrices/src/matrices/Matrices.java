@@ -15,11 +15,14 @@ public class Matrices {
         int opcion;
 
         while (!salir) {
-            System.out.println("1. Operaciones aritmeticas con Matrices");
-            System.out.println("2. Validar Matriz identidad");
-            System.out.println("3. Determinar Matriz Triangular Inferior");
-            System.out.println("4. Escape");
-            System.out.println("Usted selecciono:");
+            System.out.println("TRABAJAREMOS CON MATRICES");
+            System.out.println("¿QUE QUIERES HACER?");
+            System.out.println("1. OPERACIONES ARITMETICA CON MATRICES");
+            System.out.println("2. VALIDAR MATRIZ IDENTIDAD");
+            System.out.println("3. DETERMINAR SI HAY UNA MATRIZ TRIANGULAR INFERIOR");
+            System.out.println("4. NO HACER NADA");
+            System.out.println("");
+            System.out.println("USTED SELECCIONO:");
             opcion = m.nextInt();
 
             switch (opcion) {
@@ -164,9 +167,16 @@ public class Matrices {
         System.out.println("INGRESE LOS DATOS DE LA MATRIZ: ");
         for (int i = 0; i < tm; i++) {
             for (int j = 0; j < tm; j++) {
-                System.out.println("columa"+ (i + 1) +"fila"+ (j + 1));
+                System.out.println("Columa ("+ (i + 1)+") Fila ("+ (j + 1)+")");
                 mz[i][j] = t.nextInt();
-            }            
+            }
+            System.out.println("");
+        }
+        for (int i = 0; i < mz.length; i++) {
+            for (int j = 0; j < mz.length; j++) {
+                System.out.print(mz[i][j] + "  ");
+            }
+            System.out.println();
         }
         for (int j = 1; j < tm; j++) {
             for (int i = 0; i < tm; i++) {
@@ -176,7 +186,13 @@ public class Matrices {
             }
         }
         if (sm == 0) {
-            
+            System.out.println("");
+            System.out.println("¡¡¡VAYA SUERTE!!!");
+            System.out.println("ES UNA MATRIZ TRIANGULAR INFERIOR");
+        }else{
+            System.out.println("EL SR. MURPHY DICE QUE PARA LA PROXIMA");
+            System.out.println("NO ES UNA MATRIZ TRIANGULAR INFERIOR");
         }
-    }
+        System.out.println("");
+    }   
 }
