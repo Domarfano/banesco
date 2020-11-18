@@ -84,6 +84,7 @@ class lista {
     NodoLC ultimo;
     NodoLC aux;
     NodoLC L;
+    NodoLC anterior;
     
     public lista(){
         
@@ -131,4 +132,26 @@ class lista {
             System.out.println();
         }
     }
+    public void recorrer_inversa(char dato){
+        if (!this.isEmpty()) {
+            aux = L;
+            while (aux.siguiente!=null)
+               aux=aux.siguiente;
+            while (aux.anterior!=null && !aux.nombre.equals(nombre))
+               aux=aux.anterior;
+            if (aux.nombre.equals(nombre)){
+                System.out.println("Encontrad@ " + nombre + "por busqueda reversa");
+            }else{
+                if (aux.anterior == null){
+                    System.out.println("no pudo ser encontrado el estudiante buscado");
+                }
+            }
+        }else{
+            System.out.println("Lista Vacia!!");
+        }
+    }
+        
+    }
+    
+    
 }
