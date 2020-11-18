@@ -48,6 +48,7 @@ class readFile{
                 listas.insertar(letra);
                 listas.mostrarLista();
                 listas.recorrerLista();
+
              
                 
                 
@@ -109,8 +110,6 @@ class lista {
         ultimo = L;
         return this;
     }
-    
-    
     public void mostrarLista(){
         NodoLC auxiliar = ultimo.siguiente;
         String dat = "";
@@ -150,8 +149,28 @@ class lista {
             System.out.println("Lista Vacia!!");
         }
     }
-        
-    }
-    
-    
+    public void eliminar_jugador(char d){
+        if (!this.estaVacia()) {
+            aux = L;
+            NodoLC aux2 = aux;
+            while (aux.siguiente !=L && aux.dato == d){
+                aux2 = aux;
+                aux=aux.siguiente;
+            }
+            if (aux.dato == d){
+                if (aux == L && L.siguiente==L){
+                    L = null;
+                }else{
+                    aux2.siguiente = aux.siguiente;
+                }
+                System.out.println("Quemado: " + aux.dato);
+            }else{
+                if (aux.siguiente == L){
+                    System.out.println("no pudo se elimino al jugador: "+aux.dato);
+                }
+            }
+        }else{
+            System.out.println("Lista Vacia!!");
+        }
+    } 
 }
