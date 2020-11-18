@@ -48,7 +48,7 @@ class readFile{
                 listas.insertar(letra);
                 listas.mostrarLista();
                 listas.recorrerLista();
-
+                listas.eliminar_jugador(letra);
              
                 
                 
