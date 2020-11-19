@@ -6,6 +6,7 @@
 package papacaliente;
 
 import java.io.*;
+import java.util.*;
 
 /**
  *
@@ -68,126 +69,195 @@ public class ListaCirc {
             }
         }
     }
-
-    private Nodo ini;
-    private Nodo ultimo;
-    private int tam;
+    public void read_inv()throws FileNotFoundException{
+        LinkedList list = new LinkedList();
+        File archivo = null;
+        FileReader fr = null;
+        BufferedReader br = null;
+        
+        try{
+            archivo = new File("C:/Users/Zacarias/Desktop/Proyecto/jugadoresin.txt");
+            fr = new FileReader(archivo);
+            br = new BufferedReader(fr);
+            
+            String linea;
+            while((linea = br.readLine()) != null){
+                list.add(linea);
+            }
+            Iterator it = list.descendingIterator();
+            while(it.hasNext())
+                System.out.println(it.next());
+        }catch(IOException e){
+            System.err.println("Ha ocurrido un error: "+e);
+        }
+    }
+    
+    
+    
+    
+    
+    Nodo ini;
+    Nodo ultimo;
+    Nodo L;
+    Nodo aux;
+    int tam;
     
     public void Lista(){
-        ini = null;
         ultimo = null;
+        L = null;
+        aux = null;
         tam = 0;
     }
     
     public boolean isEmpty(){
-        return ini == null;
+        return ultimo == null;
     }
     
     public int getTam(){
         return tam;
     }
     
-    public void insertFinal(char dato){
+    public void insertFinal(String dato){
         Nodo nuevo = new Nodo();
         nuevo.setDato(dato);
         
         if(isEmpty()){
-            ini = nuevo;
             ultimo = nuevo;
-            ultimo.setSiguiente(ini);
+            ultimo.setSiguiente(L);
         }else{
             ultimo.setSiguiente(nuevo);
-            nuevo.setSiguiente(ini);
+            nuevo.setSiguiente(L);
             ultimo = nuevo;
         }
         tam++;
     }
     
-    public void insertIni(char dato){
+    public void insertIni(String dato){
         Nodo nuevo = new Nodo();
         nuevo.setDato(dato);
         
         if(isEmpty()){
-            ini = nuevo;
+            L = nuevo;
             ultimo = nuevo;
-            ultimo.setSiguiente(ini);
+            ultimo.setSiguiente(L);
         }else{
-            nuevo.setSiguiente(ini);
-            ini = nuevo;
-            ultimo.setSiguiente(ini);
+            nuevo.setSiguiente(L);
+            L = nuevo;
+            ultimo.setSiguiente(L);
         }
         tam++;
     }
     
-    public char getDato(int posicion) throws IOException{
+    public String getDato(int posicion) throws IOException{
         if (posicion >= 0 && posicion < tam) {
             if (posicion == 0) {
-                return (char) ini.getDato();
+                return (String) L.getDato();
             }else{
-                Nodo aux = ini;
+                Nodo aux = L;
                 for (int i = 0; i < posicion; i++) {
                     aux = aux.getSiguiente();
                 }
-                return (char) aux.getDato();
+                return (String) aux.getDato();
             }
         }else{
             throw new IOException("No existe dentro de la lista");
         }
     }
     
-    public boolean search(int ref){
-        Nodo aux = ini;
-        boolean found = false;
-        do{
-            if (ref == aux.getDato()) {
-                found = true;
+    public void search(String dato){
+        if (!this.isEmpty()) {
+            aux = L;
+            Nodo aux2 = aux;
+            while(aux.getSiguiente() != L && !aux.dato.equals(dato)){
+                aux2 = aux;
+                aux = aux.siguiente;
+            }if (aux.dato.equals(dato)) {
+                System.out.println(aux.dato + "El jugador existe en la lista");
             }else{
-                aux = aux.getSiguiente();
-            }
-        }while(aux != ini && found !=true);
-        return found;
-    }
-    
-    public int getPosicion(int ref) throws IOException{
-        if(search(ref)){
-            Nodo aux = ini;
-            int cont = 0;
-            
-            while(ref != aux.getDato()){
-                cont++;
-                aux = aux.getSiguiente();
-            }
-            return cont;
-        }else{
-            throw new IOException("No existe en la lista");
-        }        
-    }
-    
-    public void editRef(int ref, char dato){
-        if (search(ref)) {
-            Nodo aux = ini;
-            
-            while(aux.getDato() != ref){
-                aux = aux.getSiguiente();
-            }
-            aux.setDato(dato);
-        }
-    }
-    
-    public void editPos(int posicion, char dato){
-        if (posicion >= 0 && posicion < tam) {
-            if (posicion == 0) {
-                ini.setDato(dato);
-            }else{
-                Nodo aux = ini;
-                for (int i = 0; i < posicion; i++) {
-                    aux = aux.getSiguiente();
+                if (aux.siguiente == L) {
+                    System.out.println("No se encontro en la busqueda");
                 }
-                aux.setDato(dato);
-            }            
+            }
+        }else{
+            System.out.println("La lista esta vacia");
+        }
+    }
+    public void update(String dato){
+        if (!this.isEmpty()) {
+            aux = L;
+            Nodo aux2 = aux;
+            while(aux.siguiente != L && !aux.dato.equals(dato)){
+                aux2 = aux;
+                aux = aux.siguiente;
+            }if (aux.dato.equals(dato)) {
+                String jug = aux.dato;
+                aux.dato = dato;
+                System.out.println(jug + "Sale y entra: " + aux.dato);
+            }else{
+                if (aux.siguiente == L) {
+                    System.out.println("No hay compatibilidad en la busqueda");
+                }
+            }
+        }else{
+            System.out.println("La lista esta vacia");
         }
     }
     
+    public void quemado(String dato) throws IOException{
+        FileWriter file1 = null;
+        PrintWriter pw;
+        if(!this.isEmpty()){
+            aux = L;
+            Nodo aux2 = aux;
+            while(aux.siguiente != L && !aux.dato.equals(dato)){
+                aux2 = aux;
+                aux = aux.siguiente;
+            }if(aux.dato.equals(dato)){
+                if (aux == L && L.siguiente == L) {
+                    L = null;
+                }else{
+                    aux2.siguiente = aux.siguiente;
+                }
+                System.out.println("Se quemo: " +aux.dato);
+                try {
+                    file1 = new FileWriter("C:/Users/Zacarias/Desktop/Proyecto/perdedoresout.txt");
+                    pw = new PrintWriter(file1);
+                    
+                    pw.write(aux.dato);
+                    pw.write("");
+                    
+                } catch (IOException er) {
+                    System.err.println("Ha ocurrido un error: " + er);
+                } finally {
+                    try{
+                        if (file1 != null) {
+                            file1.close();
+                        }
+                    }catch(IOException e2) {
+                    System.err.println("Ha ocurrido un error: " + e2); 
+                    }
+                }
+            }
+        }
+    }
+    void inverso(String dato){
+        if (L == null) {
+            aux = L;
+            Nodo aux2 = aux;
+            while(aux.siguiente != null)
+                aux = aux.siguiente;
+            while(aux.siguiente != L && !aux.dato.equals(dato))
+                aux = aux.siguiente;
+            if (aux.dato.equals(dato)) {
+                System.out.println("Lista inversa: " + dato);
+            }else{
+                if (aux.siguiente == null) {
+                    System.out.println("No hubo coincidencias");
+                }
+            }
+        }
+        
+    }
     public void removePos(int posicion){
         if (posicion >= 0 && posicion < tam) {
             if (posicion == 0) {

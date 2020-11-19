@@ -23,21 +23,42 @@ public class PapaCaliente {
         list.write();
         Scanner lc = new Scanner(System.in);
         int op;
-
-        System.out.println("En que sentiod jugaran?");
-        System.out.println("(1) Horario");
-        System.out.println("(2) Antiorario");
-        op = lc.nextInt();
-        if (op == 1) {
-            System.out.println("\nLA PAPA CALIENTE EN SENTIDO HORARIO");
-            System.out.println("");
-            list.read();
-                    
-        } else {
-            System.out.println("LA PAPA CALIENTE EN SENTIDO ANTIHORARIO");
-            System.out.println("");
-        }
-
+        do{
+            System.out.println("\nEn que sentido jugaran?");
+            System.out.println("(1) Horario");
+            System.out.println("(2) Antiorario");
+            System.out.println("(3) Escape");
+            System.out.println("\n");
+            op = lc.nextInt();
+            switch(op){
+                case 1:
+                    System.out.println("\nLA PAPA CALIENTE EN SENTIDO HORARIO");
+                    System.out.println("");
+                    list.read();
+                break;    
+                case 2:
+                    System.out.println("\nLA PAPA CALIENTE EN SENTIDO ANTIHORARIO");
+                    System.out.println("");
+                    list.read_inv();
+                break;
+                case 3:
+                    System.out.println("Bye Bye");
+                break;
+            }
+        }while(op != 3);
     }
+
+    public void recorrer() throws FileNotFoundException{
+        ListaCirc list = new ListaCirc();
+        
+    }
+    
+    void recorrer_inv(String dato)throws FileNotFoundException{
+        ListaCirc list = new ListaCirc(); 
+        
+        
+    }
+    
+    
 }
 

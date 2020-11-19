@@ -11,23 +11,23 @@ package papacaliente;
  */
 public class Nodo {
 
-    private char dato;
-    private Nodo siguiente;
+    String dato;
+    Nodo siguiente;
 
-    public void Nodo(char d) {
+    public void Nodo(String d) {
         this.dato = d;
     }
 
-    public void Nodo(char d, Nodo L) {
+    public void Nodo(String d, Nodo L) {
         this.dato = d;
         this.siguiente = L;
     }
 
-    public int getDato() {
+    public String getDato() {
         return dato;
     }
 
-    public void setDato(char dato) {
+    public void setDato(String dato) {
         this.dato = dato;
     }
 
