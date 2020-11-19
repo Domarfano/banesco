@@ -63,6 +63,7 @@ public class ListaCirc {
             }
         }
     }
+
     private Nodo ini;
     private Nodo ultimo;
     private int tam;
