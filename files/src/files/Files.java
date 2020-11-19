@@ -58,13 +58,7 @@ class readFile{
             System.out.println("No se ha encontrado el archivo "+ex);
         }
     }
-
-    
-
-   
-    
 }
-
 
 class NodoLC {
     
@@ -87,13 +81,10 @@ class lista {
     NodoLC L;
     NodoLC anterior;
     
-    public lista(){
-        
-        ultimo = null;
-        
+    public lista(){        
+        ultimo = null;        
     }
-    public boolean estaVacia(){
-        
+    public boolean estaVacia(){        
         return ultimo == null;
     }
     
@@ -131,24 +122,7 @@ class lista {
             System.out.println();
         }
     }
-    public void recorrer_inversa(char dato){
-        if (!this.isEmpty()) {
-            aux = L;
-            while (aux.siguiente!=null)
-               aux=aux.siguiente;
-            while (aux.anterior!=null && !aux.nombre.equals(nombre))
-               aux=aux.anterior;
-            if (aux.nombre.equals(nombre)){
-                System.out.println("Encontrad@ " + nombre + "por busqueda reversa");
-            }else{
-                if (aux.anterior == null){
-                    System.out.println("no pudo ser encontrado el estudiante buscado");
-                }
-            }
-        }else{
-            System.out.println("Lista Vacia!!");
-        }
-    }
+
     public void eliminar_jugador(char d){
         if (!this.estaVacia()) {
             aux = L;
