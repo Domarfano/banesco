@@ -46,19 +46,6 @@ public class PapaCaliente {
                 break;
             }
         }while(op != 3);
-    }
-
-    public void recorrer() throws FileNotFoundException{
-        ListaCirc list = new ListaCirc();
-        
-    }
-    
-    void recorrer_inv(String dato)throws FileNotFoundException{
-        ListaCirc list = new ListaCirc(); 
-        
-        
-    }
-    
-    
+    }    
 }
 
