@@ -29,7 +29,7 @@ public class PapaCaliente {
         System.out.println("(2) Antiorario");
         op = lc.nextInt();
         if (op == 1) {
-            System.out.println("LA PAPA CALIENTE EN SENTIDO HORARIO");
+            System.out.println("\nLA PAPA CALIENTE EN SENTIDO HORARIO");
             System.out.println("");
             list.read();
                     

@@ -13,8 +13,9 @@ import java.io.*;
  */
 public class ListaCirc {
     public void write() throws IOException {
-        FileWriter file = null;
+        FileWriter file = null ;
         PrintWriter pw = null;
+
         try {
             file = new FileWriter("C:/Users/Zacarias/Desktop/Proyecto/jugadoresin.txt");
             pw = new PrintWriter(file);
@@ -22,7 +23,11 @@ public class ListaCirc {
             pw.println("Andrea");
             pw.println("Ana");
             pw.println("Patricia");
-
+            pw.println("Luis");
+            pw.println("Carlos");
+            pw.println("Rafael");
+            pw.println("");
+            
         } catch (IOException e) {
             System.err.println("Ha ocurrido un error al escribir");
         } finally {
