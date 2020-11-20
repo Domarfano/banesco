@@ -7,7 +7,7 @@ package papacalienteprincipal;
 
 /**
  *
- * @author Zacarias
+ * @author Domarfano & Zacarias
  */
 public class Nodo {
     String dato;

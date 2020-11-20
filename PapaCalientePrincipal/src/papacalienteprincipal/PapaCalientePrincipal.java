@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Zacarias
+ * @author Domarfano & Zacarias
  */
 public class PapaCalientePrincipal {
 
