@@ -17,7 +17,7 @@ public class PapaCalientePrincipal {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ListaCirc list = new ListaCirc();
         list.write();
         Scanner lc = new Scanner(System.in);
