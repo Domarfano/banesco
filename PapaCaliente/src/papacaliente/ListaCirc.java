@@ -94,6 +94,9 @@ public class ListaCirc {
         }
     }
     
+    public void quemados(String dato)throws IOException{
+        
+    }
     
     
     
@@ -132,7 +135,7 @@ public class ListaCirc {
                 }
                 System.out.println("Se quemo: " +aux.dato);
                 try {                   //("C:/Users/Usuario/Documents/NetBeansProjects/PapaCaliente/perdedoresin.txt")
-                    file = new FileWriter("C:/Users/Zacarias/Documents/NetBeansProjects/PapaCaliente/perdedoresout.txt");
+                    file = new FileWriter("C:/Users/Zacarias/Documents/NetBeansProjects/PapaCalient/perdedoresout.txt");
                     pw = new PrintWriter(file);
                     
                     pw.write(aux.dato);
@@ -154,13 +157,11 @@ public class ListaCirc {
     }   
     
     public int random() throws IOException{
-        int aleatorio, i;
-        
+        int aleatorio,i;
         aleatorio = (int)(Math.random()*6+3);
         for (i = 0; i <= aleatorio; i++) {
             quemado(i);
         }       
         return aleatorio;
     }
-    
 }
