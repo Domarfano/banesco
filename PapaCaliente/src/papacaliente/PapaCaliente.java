@@ -34,14 +34,18 @@ public class PapaCaliente {
                 case 1:
                     System.out.println("\nLA PAPA CALIENTE EN SENTIDO HORARIO");
                     System.out.println("");
-                    list.read();
-                    list.random();
+                    for (int i = 0; i <= list.random(); i++) {
+                        list.read();
+                    }
+
+
                 break;    
                 case 2:
                     System.out.println("\nLA PAPA CALIENTE EN SENTIDO ANTIHORARIO");
                     System.out.println("");
-                    list.read_inv();
-                    list.random();
+                    for (int i = 0; i <= list.random(); i++) {
+                        list.read_inv();
+                    }                   
                 break;
                 case 3:
                     System.out.println("Bye Bye");

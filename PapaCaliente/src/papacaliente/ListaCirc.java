@@ -17,7 +17,7 @@ public class ListaCirc {
         FileWriter file = null ;
         PrintWriter pw = null;
 
-        try {
+        try {                      //("C:/Users/Usuario/Documents/NetBeansProjects/PapaCaliente/jugadoresin.txt")
             file = new FileWriter("C:/Users/Zacarias/Documents/NetBeansProjects/PapaCaliente/jugadoresin.txt");
             pw = new PrintWriter(file);
 
@@ -48,7 +48,7 @@ public class ListaCirc {
         FileReader fr = null;
         BufferedReader br = null;
 
-        try {             
+        try {             //("C:/Users/Usuario/Documents/NetBeansProjects/PapaCaliente/jugadoresin.txt")
             archivo = new File("C:/Users/Zacarias/Documents/NetBeansProjects/PapaCaliente/jugadoresin.txt");
             fr = new FileReader(archivo);
             br = new BufferedReader(fr);
@@ -76,7 +76,7 @@ public class ListaCirc {
         FileReader fr = null;
         BufferedReader br = null;
         
-        try{
+        try{                    //("C:/Users/Usuario/Documents/NetBeansProjects/PapaCaliente/jugadoresin.txt")
             archivo = new File("C:/Users/Zacarias/Documents/NetBeansProjects/PapaCaliente/jugadoresin.txt");
             fr = new FileReader(archivo);
             br = new BufferedReader(fr);
@@ -93,6 +93,11 @@ public class ListaCirc {
             System.err.println("Ha ocurrido un error: "+e);
         }
     }
+    
+    
+    
+    
+    
        
     Nodo ini;
     Nodo ultimo;
@@ -111,7 +116,7 @@ public class ListaCirc {
     }
     
     public void quemado(int dato) throws IOException{
-        FileWriter file1 = null;
+        FileWriter file = null;
         PrintWriter pw;
         if(!this.isEmpty()){
             aux = L;
@@ -126,9 +131,9 @@ public class ListaCirc {
                     aux2.siguiente = aux.siguiente;
                 }
                 System.out.println("Se quemo: " +aux.dato);
-                try {
-                    file1 = new FileWriter("C:/Users/Zacarias/Desktop/Proyecto/perdedoresout.txt");
-                    pw = new PrintWriter(file1);
+                try {                   //("C:/Users/Usuario/Documents/NetBeansProjects/PapaCaliente/perdedoresin.txt")
+                    file = new FileWriter("C:/Users/Zacarias/Documents/NetBeansProjects/PapaCaliente/perdedoresout.txt");
+                    pw = new PrintWriter(file);
                     
                     pw.write(aux.dato);
                     pw.write("");
@@ -137,8 +142,8 @@ public class ListaCirc {
                     System.err.println("Ha ocurrido un error: " + er);
                 } finally {
                     try{
-                        if (file1 != null) {
-                            file1.close();
+                        if (file != null) {
+                            file.close();
                         }
                     }catch(IOException e2) {
                     System.err.println("Ha ocurrido un error: " + e2); 
@@ -146,33 +151,16 @@ public class ListaCirc {
                 }
             }
         }
-    }
-    void eliminar1(String dato){
-        aux=L;
-        Nodo aux2 = null;
-        while(aux.siguiente!=null || aux.dato != dato){
-            aux2=aux;
-            aux=aux.siguiente;
-        }
-        if (aux.dato == dato){
-            if (aux == L && aux.dato == dato) {
-                L = L.siguiente;
-            }else{
-                aux2.siguiente = aux.siguiente;
-            }
-            System.out.println(dato + " jugador quemado");
-        }else{
-            System.out.println("valor no encontrado en la lista");
-        }
-    }
+    }   
     
-    public void random() throws IOException{
+    public int random() throws IOException{
         int aleatorio, i;
         
-        aleatorio = (int)(Math.random()*100);
+        aleatorio = (int)(Math.random()*6+3);
         for (i = 0; i <= aleatorio; i++) {
-        }
-        quemado(i);
+            quemado(i);
+        }       
+        return aleatorio;
     }
     
 }
