@@ -117,7 +117,8 @@ public class ListaCirc {
     public boolean isEmpty() {
         return ultimo == null;
     }
-        public void quemado(int dato) throws IOException{
+
+    public void quemado(int dato) throws IOException{
         FileWriter file = null;
         PrintWriter pw;
         if(!this.isEmpty()){
@@ -162,6 +163,6 @@ public class ListaCirc {
             quemado(i);
         }       
         return aleatorio;
-    }
-
+    } 
+   
 }
