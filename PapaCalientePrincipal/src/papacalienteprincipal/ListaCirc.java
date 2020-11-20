@@ -26,8 +26,8 @@ public class ListaCirc {
 
         PrintWriter pw = null;
 
-        try {                      //("C:/Users/Usuario/Documents/NetBeansProjects/PapaCaliente/jugadoresin.txt")
-            file = new FileWriter("C:/Users/Zacarias/Documents/NetBeansProjects/PapaCaliente/jugadoresin.txt");
+        try {                      //("C:/Users/Zacarias/Documents/NetBeansProjects/PapaCaliente/jugadoresin.txt")
+            file = new FileWriter("C:/Users/Usuario/Documents/NetBeansProjects/PapaCaliente/jugadoresin.txt");
             pw = new PrintWriter(file);
 
             pw.println("Andrea");
@@ -57,8 +57,8 @@ public class ListaCirc {
         FileReader fr = null;
         BufferedReader br = null;
 
-        try {             //("C:/Users/Usuario/Documents/NetBeansProjects/PapaCaliente/jugadoresin.txt")
-            archivo = new File("C:/Users/Zacarias/Documents/NetBeansProjects/PapaCaliente/jugadoresin.txt");
+        try {             //("C:/Users/Zacarias/Documents/NetBeansProjects/PapaCaliente/jugadoresin.txt")
+            archivo = new File("C:/Users/Usuario/Documents/NetBeansProjects/PapaCaliente/jugadoresin.txt");
             fr = new FileReader(archivo);
             br = new BufferedReader(fr);
 
