@@ -117,6 +117,51 @@ public class ListaCirc {
     public boolean isEmpty() {
         return ultimo == null;
     }
-
+        public void quemado(int dato) throws IOException{
+        FileWriter file = null;
+        PrintWriter pw;
+        if(!this.isEmpty()){
+            aux = L;
+            Nodo aux2 = aux;
+            while(aux.siguiente != L && !aux.dato.equals(dato)){
+                aux2 = aux;
+                aux = aux.siguiente;
+            }if(aux.dato.equals(dato)){
+                if (aux == L && L.siguiente == L) {
+                    L = null;
+                }else{
+                    aux2.siguiente = aux.siguiente;
+                }
+                System.out.println("Se quemo: " +aux.dato);
+                try {                   //("C:/Users/Usuario/Documents/NetBeansProjects/PapaCaliente/perdedoresin.txt")
+                    file = new FileWriter("C:/Users/Zacarias/Documents/NetBeansProjects/PapaCalient/perdedoresout.txt");
+                    pw = new PrintWriter(file);
+                    
+                    pw.write(aux.dato);
+                    pw.write("");
+                    
+                } catch (IOException er) {
+                    System.err.println("Ha ocurrido un error: " + er);
+                } finally {
+                    try{
+                        if (file != null) {
+                            file.close();
+                        }
+                    }catch(IOException e2) {
+                    System.err.println("Ha ocurrido un error: " + e2); 
+                    }
+                }
+            }
+        }
+    }   
+    
+    public int random() throws IOException{
+        int aleatorio,i;
+        aleatorio = (int)(Math.random()*6+3);
+        for (i = 0; i <= aleatorio; i++) {
+            quemado(i);
+        }       
+        return aleatorio;
+    }
 
 }
