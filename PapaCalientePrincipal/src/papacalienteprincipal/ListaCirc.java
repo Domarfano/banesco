@@ -5,18 +5,25 @@
  */
 package papacalienteprincipal;
 
+
 import java.io.*;
 import static java.lang.Math.random;
 import java.util.Iterator;
 import java.util.LinkedList;
+
+
+import java.io.*;
+import java.util.*;
 
 /**
  *
  * @author Domarfano & Zacarias
  */
 public class ListaCirc {
-    public void write() throws IOException {
-        FileWriter file = null;
+
+     public void write() throws IOException {
+        FileWriter file = null ;
+
         PrintWriter pw = null;
 
         try {                      //("C:/Users/Usuario/Documents/NetBeansProjects/PapaCaliente/jugadoresin.txt")
@@ -110,5 +117,6 @@ public class ListaCirc {
     public boolean isEmpty() {
         return ultimo == null;
     }
+
 
 }
