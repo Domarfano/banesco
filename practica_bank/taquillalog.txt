@@ -1,0 +1,15 @@
+ TAQUILLAS DEL BANCO 
+Taquilla N. 1
+   Transacciones: 1
+   Total depositos: 0.0
+   Total retiros: 71.12077799124067
+   Total clientes: 1
+
+
+
+
+ TRANSACCIONES 
+    - Jace HerondaleJace Herondale: Retiro(Bs. 71.12077799124067)
+
+ CLIENTES ATENDIDOS 
+    - Jace HerondaleJace Herondale: Retiro(Bs. 71.12077799124067). Tiempo espera: 0:30
